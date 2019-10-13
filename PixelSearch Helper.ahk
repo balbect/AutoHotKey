@@ -100,3 +100,4 @@ Check_Hit()
 			}		
 	}
 *^Numpad1::ExitApp
+;
