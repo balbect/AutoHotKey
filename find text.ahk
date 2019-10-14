@@ -1,3 +1,12 @@
+;====Hot strings============
+:o:ftlc.::FindText_Left_Click(Ok,X_Adj:=0,Y_Adj:=0,MoveBack:=0)
+:o:ftrc.::FindText_Right_Click(Ok,X_Adj:=0,Y_Adj:=0,MoveBack:=0)
+:o:ftdc.::FindText_Double_Click(Ok,X_Adj:=0,Y_Adj:=0,MoveBack:=0)
+:o:ftst.::FindText_Send_Text(Ok,"text sent",EnterKey:=1,X_Adj:=0,Y_Adj:=0,MoveBack:=0)
+:o:ftmm.::FindText_Move_Mouse(Ok,X_Adj:=0,Y_Adj:=0,MoveBack:=0)
+:o:ftt.::if (ok:=FindText(0,0,150000,150000,0,0,""))
+
+
 ;/*
 ;===========================================
 ;  FindText - Capture screen image into text and then find it
