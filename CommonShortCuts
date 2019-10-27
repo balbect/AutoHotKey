@@ -1,0 +1,59 @@
+; # = Windows Key
+; + = Shift Key
+; ^ = Ctrl Key
+
+#SingleInstance force 
+#x::suspend
+
+
+NumPad1:: 
+		Send, Student made correction to pending form. Placed in coordinators box. `n=
+	return
+	
+; Shift + NumPad1
+^NumPad1::
+		Send, I cleared the last CM Flag for this studnet.
+	return
+
+NumPad2::
+		Send, 19-20... Student submitted V1 form at the counter.`n=
+	return
+
+; Shift + NumPad2
+^NumPad2::
+		Send, 19-20... The student submitted a FAFSA Signature page at the counter.`n=
+	return
+	
+NumPad3::
+		Send, Student Left.
+	return	
+	
+NumPad4::
+		Send, 19-20... Approved CPG based on income standards.`n=
+	return
+
+
+; Windows Key + NumPad4
+#NumPad4::
+		Send, BOGB
+	return
+	
+NumPad5::
+		Send, 19-20... Denied CPG based on income standards.`n=
+	return
+
+; Windows Key + NumPad5
+#NumPad5::
+		Send, DBOGW
+	return
+
+NumPad6::
+		Send, 19-20... Denied CPG based on residency status.`n=
+	return
+	
+NumPad9::
+		Send, 19-20... Corrected BOGBX TO BOGB. `n=
+	return
+	
+	
+	
