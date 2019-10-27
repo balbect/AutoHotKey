@@ -1,0 +1,15 @@
+#SingleInstance force 
+#z::suspend
+
+; ^ = ctrl 
+
+x::Send, ^x
+
+c::Send, ^c
+
+v::Send, ^v
+
+TAB::
+	SetKeyDelay 30,50
+	Send, {ALT DOWN}{TAB}{ALT UP}
+	return
