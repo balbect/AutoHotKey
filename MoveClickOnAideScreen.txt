@@ -1,0 +1,14 @@
+;For this script to run correctly make sure the bowser zoom size is at 90% and the Form Scale is at its default for every screen
+;Make sure to run once in the AIDE screen
+
+#SingleInstance
+#NumPad1::
+	Click,130, 759 ; clicks "AtP" button on the bottom left 
+		Sleep, 3000 ; waits 3 seconds (for page to load)
+	Click,684, 320 ; clicks textbox next to the Current location label.
+		Sleep, 100 ; waits 100th of a second 
+	Send, LMC ; typs LMC 
+	Click,663, 225 ; clicks the save button
+		Sleep, 4030 ; waits for procesing
+	Click,123, 435 ; clicks the first line in aide screen
+Return
