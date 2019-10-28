@@ -1,0 +1,51 @@
+
+;Income_Total
+
+
+
+;InputBox, Parent_AGI_Total, `t, input a number. `n`n1 = Yes`n2 = No
+InputBox, Std_AGI_Total, `t, what is the students AGI toal?
+
+if (Parent_AGI_Total >= 18210) and (HH_Size > 1) 
+	{
+		MsgBox, The number is greater than or equal to 18210.
+	}
+
+
+else if (Parent_AGI_Total >= 24690) and (HH_Size > 2)
+	{
+		
+	}
+
+else if (Parent_AGI_Total >= 31170) and (HH_Size > 3)
+	{
+		
+	}
+
+else if (Parent_AGI_Total >= 37650) and (HH_Size > 4)
+	{
+		
+	}
+
+else if (Parent_AGI_Total >= 44130) and (HH_Size > 5)    n 0
+	{
+		
+	}
+
+else if (Parent_AGI_Total >= 50610) and (HH_Size > 6)
+	{
+	
+	}
+
+
+else if (Parent_AGI_Total >= 57090) and (HH_Size > 7)
+	{
+		
+	}
+
+else if (Parent_AGI_Total >= 63570) and (HH_Size > 8)
+	{
+	
+	}
+
+return
