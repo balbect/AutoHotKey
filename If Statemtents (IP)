@@ -7,6 +7,26 @@
 ;Copy Text to Variable
 ;https://autohotkey.com/board/topic/146418-copy-text-to-variable/
 
+;https://autohotkey.com/board/topic/63036-storing-multiple-values-with-clipboard/
+
+Clipboard := ""
+Parent_AGI_Total := Clipboard
+Clipboard := ""
+HH_Size := Clipboard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ;InputBox, Parent_AGI_Total, `t, input a number. `n`n1 = Yes`n2 = No
 InputBox, Std_AGI_Total, `t, what is the students AGI toal?
 
