@@ -14,9 +14,11 @@ Parent_AGI_Total := Clipboard
 Clipboard := ""
 HH_Size := Clipboard
 
-
+;https://www.reddit.com/r/AutoHotkey/comments/6977i5/ahk_excel_to_copy_cell_after_cell_into_variable/
 ;==================== THIS SEEMS TO BE WORKING =====================
 ;https://autohotkey.com/board/topic/76068-solved-storing-clipboard-into-other-variable/
+
+
 
 f1::
 mouseclick, left, ,,2,0
