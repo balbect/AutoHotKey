@@ -15,7 +15,23 @@ Clipboard := ""
 HH_Size := Clipboard
 
 
+;==================== THIS SEEMS TO BE WORKING =====================
+;https://autohotkey.com/board/topic/76068-solved-storing-clipboard-into-other-variable/
 
+f1::
+mouseclick, left, ,,2,0
+sleep 100
+send {ctrldown}c{ctrlup}
+sleep 100
+pageN := clipboard ; stores the clipboard content into a variable
+
+if (pageN > 30000)
+	{
+		msgbox,,, %pageN% is greater than 30000
+	}
+
+;msgbox, %pageN% ; msgbox with the copied word, using the variable
+return
 
 
 
