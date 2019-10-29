@@ -4,6 +4,9 @@
 ;https://stackoverflow.com/questions/37464353/cant-get-autohotkey-to-evaluate-variable-in-an-if-statement
 ;https://documentation.help/AutoHotKey-Functions/Variables.htm
 
+;Copy Text to Variable
+;https://autohotkey.com/board/topic/146418-copy-text-to-variable/
+
 ;InputBox, Parent_AGI_Total, `t, input a number. `n`n1 = Yes`n2 = No
 InputBox, Std_AGI_Total, `t, what is the students AGI toal?
 
