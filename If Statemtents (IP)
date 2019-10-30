@@ -68,6 +68,18 @@ if (%Parent_AGI_total% or %Stu_AGI_total% > 30000) and (%Indep_HH_Size% or %Stu_
 }
 
 
+/* ; This is _AGI_Total : _HH_Size
+1 : 19210
+2 : 24690
+3 : 31170
+4 : 37650
+5 : 44130
+6 : 50610
+7 : 57090
+8 : 63570
+additional members: 6480
+/*
+
 
 ;msgbox, %pageN% ; msgbox with the copied word, using the variable
 return
