@@ -38,9 +38,75 @@ return
 
 ;=====================================================================
 
+;=============== I think this might work? Not sure how to test this.============
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+;https://autohotkey.com/board/topic/76068-solved-storing-clipboard-into-other-variable/
 
 
 
+f1::
+clipboard := "" 			; clears the clipboard
+mouseclick, left, ,,2,0 		; change thus variable to (click,xxx,yyy)
+sleep 100
+send {ctrldown}c{ctrlup} 	; can probably change this to (send, ^c) instead.
+sleep 100
+Parent_AGI_total := clipboard ; stores the clipboard content into a variable
+
+sleep 500
+
+clipboard :=
+mouseclick,xxx,yyy
+sleep 100
+send, ^c
+sleep 100
+Stu_AGI_total := clipboard 	; stores the clipboard content into a variable
+
+sleep 500
+
+clipboard :=
+mouseclick,xxx,yyy
+sleep 100
+send, ^c
+sleep 100
+Indep_HH_Size := clipboard 
+
+sleep 500
+
+clipboard :=
+mouseclick,xxx,yyy
+sleep 100
+send, ^c
+sleep 100
+Dep_HH_Size := clipboard 
+
+
+if (Parent_AGI_total > 30000) or (Stu_AGI_total > 1) and (Indep_HH_Size > 1) of (Stu_AGI_total > 1)
+{
+		msgbox,,, %Parent_AGI_total% is greater than 30000
+}
+
+
+if (%Parent_AGI_total% or %Stu_AGI_total% > 30000) and (%Indep_HH_Size% or %Stu_AGI_total% > 1)
+{
+		msgbox,,, %Stu_AGI_total% is greater than 30000
+}
+
+
+
+
+
+
+
+;msgbox, %pageN% ; msgbox with the copied word, using the variable
+return
+
+
+;===============================================================
 
 
 
