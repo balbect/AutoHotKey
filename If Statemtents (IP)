@@ -26,7 +26,7 @@ mouseclick, left, 693, 578,2,0 		; change thus variable to (click,xxx,yyy)
 sleep 100
 send ^c 					
 ClipWait
-Parent_AGI_total := clipboard 		; stores the clipboard content into a variable
+Parent_AGI := clipboard 		; stores the clipboard content into a variable
 
 sleep 500
 
@@ -35,7 +35,7 @@ mouseclick, left, 691, 603, 2, 0
 sleep 100
 send ^c
 ClipWait
-Stu_AGI_total := clipboard 	
+Stu_AGI := clipboard 	
 
 sleep 500
 
@@ -56,7 +56,7 @@ ClipWait
 Dep_HH_Size := clipboard 
 
 
-if (Parent_AGI_total > 30000) or (Stu_AGI_total > 1) and (Indep_HH_Size > 1) of (Stu_AGI_total > 1)
+if (Parent_AGI_total > 30000) or (Stu_AGI_total > 1) and (Indep_HH_Size > 1) of ( Stu_AGI_total > 1)
 {
 		msgbox,,, %Parent_AGI_total% is greater than 30000
 }
