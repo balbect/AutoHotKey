@@ -1,8 +1,10 @@
-﻿#SingleInstance, force
+#SingleInstance, force
 
 ^!p::Pause    ; Pause script with Ctrl+Alt+P
 ^!s::Suspend  ; Suspend script with Ctrl+Alt+S
 ^!r::Reload   ; Reload script with Ctrl+Alt+R
+
+
 
 
 f1::
@@ -46,22 +48,24 @@ if ((Parent_AGI > 18210) or (Stu_AGI > 18210)) and ((Indep_HH_Size = 1) or (Dep_
 
 } else if ((Parent_AGI > 24690) or (Stu_AGI > 24690)) and ((Indep_HH_Size = 2) or (Dep_HH_Size = 2)) {
 	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for an Independent/Dependendent Household of 2.
-} else {
-	msgbox, something else
-}
 
+} else if ((Parent_AGI > 31170) or (Stu_AGI > 31170) and (Indep_HH_Size = 3) or (Dep_HH_Size = 3)){
+	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for an Independent/Dependendent Household of 3.
 
-;else if (Parent_AGI > 31170) or (Stu_AGI > 31170) and (Indep_HH_Size = 3) or (Dep_HH_Size = 3)
+} else if ((Parent_AGI > 37650) or (Stu_AGI > 37650) and (Indep_HH_Size = 4) or (Dep_HH_Size = 4)){
+	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $37,650 dollar maximum for an Independent/Dependendent Household of 4.
 
-;else if (Parent_AGI > 37650) or (Stu_AGI > 37650) and (Indep_HH_Size = 4) or (Dep_HH_Size = 4)
+} else if ((Parent_AGI > 44130) or (Stu_AGI > 44130) and (Indep_HH_Size > 5) or (Dep_HH_Size > 5)){
+	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $44,130 dollar maximum for an Independent/Dependendent Household of 5.
 
-;else if (Parent_AGI > 44130) or (Stu_AGI > 44130) and (Indep_HH_Size > 5) or (Dep_HH_Size > 5)
+} else if ((Parent_AGI > 50610) or (Stu_AGI > 50610) and (Indep_HH_Size > 6) or (Dep_HH_Size > 6)){
+	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $50,610 dollar maximum for an Independent/Dependendent Household of 6.
 
-;else if (Parent_AGI > 50610) or (Stu_AGI > 50610) and (Indep_HH_Size > 6) or (Dep_HH_Size > 6)
+} else if ((Parent_AGI > 57090) or (Stu_AGI > 57090) and (Indep_HH_Size > 7) or (Dep_HH_Size > 7)){
+	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $57,090 dollar maximum for an Independent/Dependendent Household of 7.
 
-;else if (Parent_AGI > 57090) or (Stu_AGI > 57090) and (Indep_HH_Size > 7) or (Dep_HH_Size > 7)
-
-;else if (Parent_AGI > 63570) or (Stu_AGI > 63570) and (Indep_HH_Size > 8) or (Dep_HH_Size > 8)
+} else if (Parent_AGI > 63570) or (Stu_AGI > 63570) and (Indep_HH_Size > 8) or (Dep_HH_Size > 8){
+	msgbox,,, Woah
 
 }
 return 
