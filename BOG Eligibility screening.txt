@@ -74,35 +74,70 @@ Dep_HH_Size := clipboard
 
 
 if ((Parent_AGI > 18210) or (Stu_AGI > 18210)) and ((Indep_HH_Size = 1) or (Dep_HH_Size = 1)) {
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $19,210 dollar maximum for an Independent/Dependendent Household of 1.
-	
+	msgbox,,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $19,210 dollar maximum for an Independent/Dependendent Household of 1.
+	send, {#NumPad2}
 } 
+else if ((Parent_AGI <= 18210) or (Stu_AGI <= 18210)) and ((Indep_HH_Size = 1) or (Dep_HH_Size = 1)){
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 1 
+	send, {#NumPad1}
+}
+
 if ((Parent_AGI > 24690) or (Stu_AGI > 24690)) and ((Indep_HH_Size = 2) or (Dep_HH_Size = 2)) {
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for an Independent/Dependendent Household of 2.
-	
+	msgbox,,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for an Independent/Dependendent Household of 2.
+	send, {#NumPad2}
+}
+else if ((Parent_AGI <= 24690) or (Stu_AGI <= 24690)) and ((Indep_HH_Size = 2) or (Dep_HH_Size = 2)) {
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 2 
+	send, {#NumPad1}
 }
 if ((Parent_AGI > 31170) or (Stu_AGI > 31170)) and ((Indep_HH_Size = 3) or (Dep_HH_Size = 3)){
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for an Independent/Dependendent Household of 3.
-	
+	msgbox,,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for an Independent/Dependendent Household of 3.
+	send, {#NumPad2}
+}
+else if((Parent_AGI <= 31170) or (Stu_AGI <= 31170)) and ((Indep_HH_Size = 3) or (Dep_HH_Size = 3)) {
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 3 
+	send, {#NumPad1}
 }
 if ((Parent_AGI > 37650) or (Stu_AGI > 37650)) and ((Indep_HH_Size = 4) or (Dep_HH_Size = 4)){
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $37,650 dollar maximum for an Independent/Dependendent Household of 4.
-	
+	msgbox,,, DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $37,650 dollar maximum for an Independent/Dependendent Household of 4.
+	send, {#NumPad2}
+}
+else if ((Parent_AGI <= 37650) or (Stu_AGI <= 37650)) and ((Indep_HH_Size = 4) or (Dep_HH_Size = 4)){
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 4
+	send, {#NumPad1}
 }
 if ((Parent_AGI > 44130) or (Stu_AGI > 44130)) and ((Indep_HH_Size = 5) or (Dep_HH_Size = 5)){
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $44,130 dollar maximum for an Independent/Dependendent Household of 5.
-	
+	msgbox,,,DENY`n  Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $44,130 dollar maximum for an Independent/Dependendent Household of 5.
+	send, {#NumPad2}
+}
+else if ((Parent_AGI <= 44130) or (Stu_AGI <= 44130)) and ((Indep_HH_Size = 5) or (Dep_HH_Size = 5)){
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 5
+	send, {#NumPad1}
 }
 if ((Parent_AGI > 50610) or (Stu_AGI > 50610)) and ((Indep_HH_Size = 6) or (Dep_HH_Size = 6)){
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $50,610 dollar maximum for an Independent/Dependendent Household of 6.
-	
+	msgbox,,,DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $50,610 dollar maximum for an Independent/Dependendent Household of 6.
+	send, {#NumPad2}
+}
+else if ((Parent_AGI <= 50610) or (Stu_AGI <= 50610)) and ((Indep_HH_Size = 6) or (Dep_HH_Size = 6)){
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 6
+	send, {#NumPad1}
 }
 if ((Parent_AGI > 57090) or (Stu_AGI > 57090)) and ((Indep_HH_Size = 7) or (Dep_HH_Size = 7)){
-	msgbox,,, Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $57,090 dollar maximum for an Independent/Dependendent Household of 7.
-	
+	msgbox,,,DENY`N  Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $57,090 dollar maximum for an Independent/Dependendent Household of 7.
+	send, {#NumPad2}
+}
+else if if ((Parent_AGI <= 57090) or (Stu_AGI <= 57090)) and ((Indep_HH_Size = 7) or (Dep_HH_Size = 7)){
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 7 
+	send, {#NumPad1}
 }
 if ((Parent_AGI > 63570) or (Stu_AGI > 63570)) and ((Indep_HH_Size = 8) or (Dep_HH_Size = 8)){
-	msgbox,,, Woah
+	msgbox,,, Woah. Check manually 
 	
 }
+else if ((Parent_AGI <= 63570) or (Stu_AGI <= 63570)) and ((Indep_HH_Size = 8) or (Dep_HH_Size = 8)){
+	msgbox,,, AWARD`nLess than or equal to income standards for hh of 8
+	send, {#NumPad1}
+}
+
+
 return 
