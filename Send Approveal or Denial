@@ -1,0 +1,87 @@
+^!p::Pause    ; Pause script with Ctrl+Alt+P
+^!s::Suspend  ; Suspend script with Ctrl+Alt+S
+^!r::Reload   ; Reload script with Ctrl+Alt+R
+
+#SingleInstance, force
+
+
+;BOBG (APPROVAL)
+
+#NumPad1::
+;This changes the location from DST to ABC and leaves the mouse on the first award-line on the aide screen.
+
+	Click, 208, 784	;Clicks to the Aide screen from BOGW screen.
+	sleep, 2000
+	Click,130, 759 	; clicks "AtP" button on the bottom left.
+		Sleep, 8000 	; waits 8 seconds (for page to load).
+	Click,684, 320 	; clicks textbox next to the Current location label.
+		Sleep, 1000	; waits second. 
+	Send, ABC			; types ABC. 
+	Click,663, 225 	; clicks the save button.
+		Sleep, 9000 	; waits for procesing.
+	Click,123, 435 	; clicks the first award line in aide screen.
+	
+	;This sends "BOGB" to the first line award line on the aide screen. Then sets action collum to "A"
+	Send, bogb
+		sleep, 800
+	Click, 461, 437
+		sleep, 1000
+	Send, a
+	
+	;This opens the Awarding Comments box. Timestamps, writes an approval message and saves out of the Awarding Comments box.
+
+	Click,504, 756 	; Clicks the Cmnt box in the AIDE screen
+		Sleep, 1000
+	Send `n
+	Click,411, 197 	; clicks the timestamp
+	Send, 19-20... Approved based on income standards.`n=`n ;Change this message to your needs
+	Click, 256, 198 	; Clicks save on the comment screen (next to the timestamp)
+	
+	
+Return
+
+;DBOGW (DENIAL)
+
+	;This changes the location from DST to ABC and leaves the mouse on the first award-line on the aide screen.
+#NumPad2::
+	Click, 208, 784	;Clicks to the Aide screen from BOGW screen.
+	sleep, 2000
+	Click,130, 759 	; clicks "AtP" button on the bottom left.
+		Sleep, 8000 	; waits 8 seconds (for page to load).
+	Click,684, 320 	; clicks textbox next to the Current location label.
+		Sleep, 1000	; waits before typing 
+	Send, ABC			; types ABC. 
+	Click,663, 225 	; clicks the save button.
+		Sleep, 9000 	; waits for procesing.
+	Click,123, 435 	; clicks the first award line in aide screen.
+	
+	;This sends "DBOGW" to the first line award line on the aide screen. Generates term information. Then sets action column to "A".
+	Send, dbogw
+		sleep, 1000
+	Click, 402, 438
+	
+	;Generates information by awarding a "1" in the amount, clicking out of the amount line, and replacing that "1" with a "0".
+		sleep, 1600
+	send, 1
+	click, 404, 851
+		sleep, 1600
+	Click,392, 439
+	Send, 0
+	
+	;Sets action column to "A"		
+	Click, 461, 437	;Clicks action column
+		sleep, 1000
+	Send, a			;Sends "a" in the action column
+	
+
+	;This opens the Awarding Comments box. Timestamps, writes a denial message, then saves out of the Awarding Comments box.
+
+	Click,504, 756 	; Clicks the Cmnt box in the AIDE screen
+		Sleep, 1000
+	Send `n
+	Click,411, 197 	; clicks the timestamp
+	Send, 19-20... Denied based on income standards.`n=`n ;Change this message to your needs
+	Click, 256, 198 	; Clicks save on the comment screen (next to the timestamp)
+	
+	
+Return
