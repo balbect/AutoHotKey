@@ -25,12 +25,17 @@ send ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox, The attempt to copy Parent_AGI onto the clipboard failed.
+			MsgBox,4, The attempt to copy Parent_AGI onto the clipboard failed.`nPlace a zero in this box?
+				ifmsgbox, Yes
+					send, 0
+				ifmsgbox, No
+					msgbox, Fine, you do it.
+				return
 			return
 		}
 Parent_AGI := clipboard 				; stores the clipboard content into a variable
 
-sleep 300
+sleep 500
 
 clipboard := ""
 mouseclick, left, 693, 606, 2, 0
@@ -44,7 +49,7 @@ ClipWait,2
 		}
 Stu_AGI := clipboard 	
 
-sleep 300
+sleep 500
 
 clipboard := ""
 mouseclick, left, 511, 551, 2, 0
@@ -53,12 +58,17 @@ send, ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox, The attempt to copy Indep_HH_Size onto the clipboard failed.
+			MsgBox,4, The attempt to copy Indep_HH_Size onto the clipboard failed.`nPlace a zero in this box?
+				ifmsgbox, Yes
+					send, 0
+				ifmsgbox, No
+					msgbox, Fine, you do it.
+				return
 			return
 		}
 Indep_HH_Size := clipboard 
 
-sleep 300
+sleep 500
 
 clipboard := ""
 mouseclick, left, 278, 549, 2, 0
@@ -73,7 +83,7 @@ ClipWait,2
 Dep_HH_Size := clipboard 
 
 
-if ((Parent_AGI > 18210) or (Stu_AGI > 18210)) and ((Indep_HH_Size = 1) or (Dep_HH_Size = 1)) {
+if ((Parent_AGI > 18210) or (Stu_AGI > 18210)) and ((Indep_HH_Size = 1) or (Dep_HH_Size = 1)){
 	msgbox,4,, DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $18,210 dollar maximumor a household of 1.`nContinue with DENIAL?
 		ifmsgbox, Yes
 			send #{NumPad2}
@@ -90,8 +100,8 @@ else if ((Parent_AGI <= 18210) or (Stu_AGI <= 18210)) and ((Indep_HH_Size = 1) o
 	return
 }
 
-if ((Parent_AGI > 24690) or (Stu_AGI > 24690)) and ((Indep_HH_Size = 2) or (Dep_HH_Size = 2)) {
-	msgbox,4,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for a household of 2.`nContinue with DENIAL?
+if ((Parent_AGI > 24690) or (Stu_AGI > 24690)) and ((Indep_HH_Size = 2) or (Dep_HH_Size = 2)){
+	msgbox,4,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for a household of 2.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -99,7 +109,7 @@ if ((Parent_AGI > 24690) or (Stu_AGI > 24690)) and ((Indep_HH_Size = 2) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 24690) or (Stu_AGI <= 24690)) and ((Indep_HH_Size = 2) or (Dep_HH_Size = 2)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 2. `nContinue Awarding? 
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 2 
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
@@ -108,7 +118,7 @@ else if ((Parent_AGI <= 24690) or (Stu_AGI <= 24690)) and ((Indep_HH_Size = 2) o
 }
 
 if ((Parent_AGI > 31170) or (Stu_AGI > 31170)) and ((Indep_HH_Size = 3) or (Dep_HH_Size = 3)){
-	msgbox,4,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for a household of 3.`nContinue with DENIAL?
+	msgbox,4,, DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $24,690 dollar maximum for a household of 3.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -116,7 +126,7 @@ if ((Parent_AGI > 31170) or (Stu_AGI > 31170)) and ((Indep_HH_Size = 3) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 31170) or (Stu_AGI <= 31170)) and ((Indep_HH_Size = 3) or (Dep_HH_Size = 3)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 3.`nContinue Awarding? 
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 3 
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
@@ -125,7 +135,7 @@ else if ((Parent_AGI <= 31170) or (Stu_AGI <= 31170)) and ((Indep_HH_Size = 3) o
 }
 
 if ((Parent_AGI > 37650) or (Stu_AGI > 37650)) and ((Indep_HH_Size = 4) or (Dep_HH_Size = 4)){
-	msgbox,4,, DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $37,650 dollar maximum for a household of 4.`nContinue with DENIAL?
+	msgbox,4,, DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $37,650 dollar maximum for a household of 4.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -133,7 +143,7 @@ if ((Parent_AGI > 37650) or (Stu_AGI > 37650)) and ((Indep_HH_Size = 4) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 37650) or (Stu_AGI <= 37650)) and ((Indep_HH_Size = 4) or (Dep_HH_Size = 4)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 4.`nContinue Awarding? 
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 4
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
@@ -142,7 +152,7 @@ else if ((Parent_AGI <= 37650) or (Stu_AGI <= 37650)) and ((Indep_HH_Size = 4) o
 }
 
 if ((Parent_AGI > 44130) or (Stu_AGI > 44130)) and ((Indep_HH_Size = 5) or (Dep_HH_Size = 5)){
-	msgbox,,,DENY`n  Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $44,130 dollar maximum for a household of 5.`nContinue with DENIAL?
+	msgbox,4,,DENY`n  Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $44,130 dollar maximum for a household of 5.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -150,7 +160,7 @@ if ((Parent_AGI > 44130) or (Stu_AGI > 44130)) and ((Indep_HH_Size = 5) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 44130) or (Stu_AGI <= 44130)) and ((Indep_HH_Size = 5) or (Dep_HH_Size = 5)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 5.`nContinue Awarding? 
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 5
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
@@ -159,7 +169,7 @@ else if ((Parent_AGI <= 44130) or (Stu_AGI <= 44130)) and ((Indep_HH_Size = 5) o
 }
 
 if ((Parent_AGI > 50610) or (Stu_AGI > 50610)) and ((Indep_HH_Size = 6) or (Dep_HH_Size = 6)){
-	msgbox,4,,DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $50,610 dollar maximum for a household of 6.`nContinue with DENIAL?
+	msgbox,4,,DENY`n Studnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $50,610 dollar maximum for a household of 6.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -167,7 +177,7 @@ if ((Parent_AGI > 50610) or (Stu_AGI > 50610)) and ((Indep_HH_Size = 6) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 50610) or (Stu_AGI <= 50610)) and ((Indep_HH_Size = 6) or (Dep_HH_Size = 6)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 6.`nContinue Awarding? 
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 6
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
@@ -176,7 +186,7 @@ else if ((Parent_AGI <= 50610) or (Stu_AGI <= 50610)) and ((Indep_HH_Size = 6) o
 }
 
 if ((Parent_AGI > 57090) or (Stu_AGI > 57090)) and ((Indep_HH_Size = 7) or (Dep_HH_Size = 7)){
-	msgbox,4,,DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $57,090 dollar maximum for a household of 7.`nContinue with DENIAL?
+	msgbox,4,,DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $57,090 dollar maximum for a household of 7.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -184,7 +194,7 @@ if ((Parent_AGI > 57090) or (Stu_AGI > 57090)) and ((Indep_HH_Size = 7) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 57090) or (Stu_AGI <= 57090)) and ((Indep_HH_Size = 7) or (Dep_HH_Size = 7)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 7.`nContinue Awarding?  
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 7 
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
@@ -193,7 +203,7 @@ else if ((Parent_AGI <= 57090) or (Stu_AGI <= 57090)) and ((Indep_HH_Size = 7) o
 }
 
 if ((Parent_AGI > 63570) or (Stu_AGI > 63570)) and ((Indep_HH_Size = 8) or (Dep_HH_Size = 8)){
-	msgbox,4,,DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $63,570 dollar maximum for a household of 8.`nContinue with DENIAL?
+	msgbox,4,,DENY`nStudnet AGI (%Stu_AGI%) or Parent AGI (%Parent_AGI%) is greater than the $63,570 dollar maximum for a household of 8.
 	ifmsgbox, Yes
 		send #{NumPad2}
 	ifmsgbox, No
@@ -201,7 +211,7 @@ if ((Parent_AGI > 63570) or (Stu_AGI > 63570)) and ((Indep_HH_Size = 8) or (Dep_
 	return
 }
 else if ((Parent_AGI <= 63570) or (Stu_AGI <= 63570)) and ((Indep_HH_Size = 8) or (Dep_HH_Size = 8)){
-	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 8.`nContinue Awarding? 
+	msgbox,4,, AWARD`nLess than or equal to income standards for hh of 8
 		ifmsgbox, Yes
 			send #{NumPad1}
 		ifmsgbox, No
