@@ -5,7 +5,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;https://autohotkey.com/board/topic/76068-solved-storing-clipboard-into-other-variable/
 
-
+;ErrorLevel = 0 is failure
+;ErrorLevel = 1 is success 
 
 
 #SingleInstance, force
@@ -17,7 +18,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 
-f1::
+#{Numpad9}::
 clipboard := "" 					; clears the clipboard
 mouseclick, left,  691, 576,2,0 		; change thus variable to (click,xxx,yyy)
 sleep, 100
@@ -25,9 +26,10 @@ send ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox,4, The attempt to copy Parent_AGI onto the clipboard failed.`nPlace a zero in this box?
+			MsgBox,4,, The attempt to copy Parent_AGI onto the clipboard failed.`nPlace a zero in this box?
 				ifmsgbox, Yes
-					send, 0
+					send 0
+					send #{Numpad9}
 				ifmsgbox, No
 					msgbox, Fine, you do it.
 				return
@@ -44,7 +46,7 @@ send ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox, The attempt to copy Stu_AGI onto the clipboard failed.
+			MsgBox,,, The attempt to copy Stu_AGI onto the clipboard failed.
 			return
 		}
 Stu_AGI := clipboard 	
@@ -58,7 +60,7 @@ send, ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox,4, The attempt to copy Indep_HH_Size onto the clipboard failed.`nPlace a zero in this box?
+			MsgBox,4,, The attempt to copy Indep_HH_Size onto the clipboard failed.`nPlace a zero in this box?
 				ifmsgbox, Yes
 					send, 0
 				ifmsgbox, No
@@ -77,7 +79,12 @@ send, ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox, The attempt to copy Dep_HH_Size onto the clipboard failed.
+			MsgBox,,, The attempt to copy Dep_HH_Size onto the clipboard failed.`nPlace a zero in this box?
+				ifmsgbox, Yes
+					send, 0
+				ifmsgbox, No
+					msgbox, Fine, you do it.
+				return
 			return
 		}
 Dep_HH_Size := clipboard 
