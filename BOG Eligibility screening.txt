@@ -18,7 +18,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 
-#{Numpad9}::
+
+f1::
 clipboard := "" 					; clears the clipboard
 mouseclick, left,  691, 576,2,0 		; change thus variable to (click,xxx,yyy)
 sleep, 100
@@ -26,18 +27,12 @@ send ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox,4,, The attempt to copy Parent_AGI onto the clipboard failed.`nPlace a zero in this box?
-				ifmsgbox, Yes
-					send 0
-					send #{Numpad9}
-				ifmsgbox, No
-					msgbox, Fine, you do it.
-				return
+			MsgBox,,, The attempt to copy Parent_AGI onto the clipboard failed.
 			return
 		}
 Parent_AGI := clipboard 				; stores the clipboard content into a variable
 
-sleep 500
+sleep 300
 
 clipboard := ""
 mouseclick, left, 693, 606, 2, 0
@@ -51,7 +46,7 @@ ClipWait,2
 		}
 Stu_AGI := clipboard 	
 
-sleep 500
+sleep 300
 
 clipboard := ""
 mouseclick, left, 511, 551, 2, 0
@@ -70,7 +65,7 @@ ClipWait,2
 		}
 Indep_HH_Size := clipboard 
 
-sleep 500
+sleep 300
 
 clipboard := ""
 mouseclick, left, 278, 549, 2, 0
@@ -79,7 +74,7 @@ send, ^c
 ClipWait,2
 	if ErrorLevel
 		{
-			MsgBox,,, The attempt to copy Dep_HH_Size onto the clipboard failed.`nPlace a zero in this box?
+			MsgBox,4,, The attempt to copy Dep_HH_Size onto the clipboard failed.`nPlace a zero in this box?
 				ifmsgbox, Yes
 					send, 0
 				ifmsgbox, No
